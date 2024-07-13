@@ -1,6 +1,7 @@
 # Binary Tree Node Depths
 
-This Python code calculates the sum of depths of all nodes in a binary tree. It has a time complexity of O(n), where n is the number of nodes in the binary tree, and a space complexity of O(h), where h is the height of the binary tree.
+This Python code calculates the sum of depths of all nodes in a binary tree. 
+It has a time complexity of O(n), where n is the number of nodes in the binary tree, and a space complexity of O(h), where h is the height of the binary tree.
 
 ```python
 # Time - O(n), Space - O(h)
