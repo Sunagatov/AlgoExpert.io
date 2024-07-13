@@ -1,6 +1,8 @@
 public class PartitionSort {
 
-	static int partition(int[] array, int begin, int end) {
+	static int partition(int[] array, 
+			     int begin, 
+			     int end) {
 		int pivot = end;
 		int counter = begin;
 		for (int i = begin; i < end; i++) {
