@@ -2,7 +2,10 @@ package com.zufar.algorithm.graphAlgorithm;
 
 public class TreeAlgorithm {
 
-    public static void binarySearch(int[] array, int first, int last, int item) {
+    public static void binarySearch(int[] array, 
+                                    int first, 
+                                    int last, 
+                                    int item) {
         int position;
         int comparisonCount = 1;    // для подсчета количества сравнений
 
