@@ -7,7 +7,8 @@ import java.util.function.Predicate;
 
 public class BreadthFirstSearch {
 
-    public static TreeNode<Integer> findFirstByPredicate(TreeNode<Integer> root, Predicate<Integer> condition) {
+    public static TreeNode<Integer> findFirstByPredicate(TreeNode<Integer> root, 
+                                                         Predicate<Integer> condition) {
         ArrayDeque<TreeNode<Integer>> numbersQueue = new ArrayDeque<>(root.getChildren());
         Set<TreeNode<Integer>> checkedNodes = new HashSet<>();
         TreeNode<Integer> current;
