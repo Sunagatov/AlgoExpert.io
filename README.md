@@ -59,4 +59,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - Special thanks to the contributors who have helped improve this project.
 - Inspired by various algorithm and data structure resources available online.
 
-For more information and resources, visit [AlgoExpert.io](https://github.com/Sunagatov/AlgoExpert.io).
+For more information and resources, visit [zufarexplainedit chat on Telegram](https://t.me/zufarexplainedit).
