@@ -1,0 +1,37 @@
+public class TreeRecursiveAlgorithm {
+
+    // Method to perform a pre-order traversal of the N-ary tree
+    public void preOrderTraversal(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        // Print the current node's value
+        System.out.print(root.val + " ");
+
+        // Recursively traverse each child
+        for (TreeNode child : root.children) {
+            preOrderTraversal(child);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Create an example N-ary tree
+        TreeNode root = new TreeNode(1);
+        TreeNode node2 = new TreeNode(2);
+        TreeNode node3 = new TreeNode(3);
+        TreeNode node4 = new TreeNode(4);
+        TreeNode node5 = new TreeNode(5);
+        TreeNode node6 = new TreeNode(6);
+
+        root.children.add(node2);
+        root.children.add(node3);
+        root.children.add(node4);
+        node2.children.add(node5);
+        node2.children.add(node6);
+
+        // Perform a pre-order traversal of the tree
+        TreeRecursiveAlgorithm treeAlgo = new TreeRecursiveAlgorithm();
+        treeAlgo.preOrderTraversal(root);
+    }
+}
