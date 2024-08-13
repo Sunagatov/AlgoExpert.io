@@ -15,5 +15,3 @@ def two_number_sum(array, target_sum):
         else:
             right_pointer -= 1
     return []
-
-
