@@ -1,3 +1,5 @@
+package sorting;
+
 public class PartitionSort {
 
 	static int partition(int[] array, 
