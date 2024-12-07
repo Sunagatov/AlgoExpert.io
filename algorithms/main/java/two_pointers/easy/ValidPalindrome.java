@@ -3,9 +3,26 @@ package two_pointers.easy;
 /**
  * 125. Valid Palindrome
  *
+ * ----------------------------------------------------
+ *
  * Difficulty: Easy
+ *
+ * ----------------------------------------------------
+ *
  * Topics: Two Pointers, String
  *
+ * ----------------------------------------------------
+ *
+ * Leetcode: https://leetcode.com/problems/valid-palindrome/description/
+ *
+ * ----------------------------------------------------
+ * Time Complexity: O(n), where n is the length of the string.
+ * - Each character in the string is visited at most once, as the pointers move towards each other.
+ *
+ * Space Complexity: O(1)
+ * - The algorithm uses a constant amount of extra space, as it only uses two integer variables (left and right).
+ *
+ * ----------------------------------------------------
  * Description:
  * A phrase is a palindrome if, after converting all uppercase letters into
  * lowercase letters and removing all non-alphanumeric characters, it reads
@@ -13,6 +30,8 @@ package two_pointers.easy;
  * and numbers.
  *
  * Given a string s, return true if it is a palindrome, or false otherwise.
+ *
+ * ----------------------------------------------------
  *
  * Examples:
  *
@@ -33,8 +52,7 @@ package two_pointers.easy;
  * characters. Since an empty string reads the same forward and backward,
  * it is a palindrome.
  *
- * Related Link:
- * https://leetcode.com/problems/valid-palindrome/description/
+ * ----------------------------------------------------
  *
  * Algorithm:
  * - Use two pointers: one starting at the beginning of the string (left)
@@ -43,11 +61,6 @@ package two_pointers.easy;
  * - Compare the characters at the left and right pointers, ignoring case.
  * - If the pointers cross without finding a mismatch, the string is a palindrome.
  *
- * Time Complexity: O(n), where n is the length of the string.
- * - Each character in the string is visited at most once, as the pointers move towards each other.
- *
- * Space Complexity: O(1)
- * - The algorithm uses a constant amount of extra space, as it only uses two integer variables (left and right).
  */
 
 public class ValidPalindrome {
