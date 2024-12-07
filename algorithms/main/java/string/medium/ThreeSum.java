@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * ----------------------------------------------------
  * 15. 3Sum
- *
  * ----------------------------------------------------
  *
  * Difficulty: Medium
@@ -21,12 +21,14 @@ import java.util.List;
  *
  * ----------------------------------------------------
  *
- * Time Complexity: O(n^2), where n is the length of the input array.
+ * Time Complexity:
+ * O(n^2), where n is the length of the input array.
  * - Sorting the array takes O(n log n).
  * - The nested loop with the two-pointer approach takes O(n^2) in the worst case.
  * - Therefore, the overall complexity is O(n^2).
  *
- * Space Complexity: O(1) auxiliary space.
+ * Space Complexity:
+ * O(1) auxiliary space.
  * - Aside from the output list, no additional data structures are used.
  * - Sorting modifies the array in-place.
  *
@@ -69,6 +71,7 @@ import java.util.List;
  * 4. Skip duplicate elements in the array to avoid duplicate triplets.
  * 5. Add valid triplets to the result list.
  *
+ * ----------------------------------------------------
  */
 
 public class ThreeSum {
