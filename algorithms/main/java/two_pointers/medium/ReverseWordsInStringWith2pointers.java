@@ -109,7 +109,7 @@ package two_pointers.medium;
  * ----------------------------------------------------
  */
 
-public class ReverseWordsInString {
+public class ReverseWordsInStringWith2pointers {
 
     public static String reverseWords(String s) {
         // Convert to char array for in-place operations
