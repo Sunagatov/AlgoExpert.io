@@ -74,7 +74,7 @@ import java.util.List;
  * ----------------------------------------------------
  */
 
-public class ThreeSum {
+public class ThreeSumWith2pointers {
 
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
