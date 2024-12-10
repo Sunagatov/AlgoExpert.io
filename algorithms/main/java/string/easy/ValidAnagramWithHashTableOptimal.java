@@ -1,12 +1,10 @@
-package arrays.easy;
-
-import java.util.Arrays;
+package string.easy;
 
 /**
  * <p>
  * ----------------------------------------------------
  * <p>
- * 242. Valid Anagram (Using Sorting)
+ * 242. Valid Anagram (Using Optimized Hash Table)
  * <p>
  * ----------------------------------------------------
  * <p>
@@ -14,7 +12,7 @@ import java.util.Arrays;
  * <p>
  * ----------------------------------------------------
  * <p>
- * Topics: String, Sorting
+ * Topics: String, Hash Table, Array
  * <p>
  * ----------------------------------------------------
  * <p>
@@ -31,24 +29,25 @@ import java.util.Arrays;
  * ----------------------------------------------------
  * <p>
  * Algorithm:
- * 1. If the lengths of the two strings are different, return false (they cannot be anagrams).
- * 2. Convert both strings into character arrays.
- * 3. Sort both character arrays.
- * 4. Compare the two sorted arrays using `Arrays.equals()`.
- *    - If they are equal, return true (the strings are anagrams).
+ * 1. If the lengths of `s` and `t` are not equal, return false (they cannot be anagrams).
+ * 2. Use an integer array of size 26 to store the frequency of each character.
+ *    - Increment the count for each character in `s`.
+ *    - Decrement the count for each character in `t`.
+ * 3. After processing both strings, check if all values in the frequency array are zero.
+ *    - If they are, return true (the strings are anagrams).
  *    - Otherwise, return false.
  * <p>
  * ----------------------------------------------------
  * <p>
  * Time Complexity:
- * O(n log n), where n is the length of the strings.
- * - Sorting the character arrays dominates the complexity.
+ * O(n), where n is the length of the strings.
+ * - Each character in both strings is processed once.
  * <p>
  * ----------------------------------------------------
  * <p>
  * Space Complexity:
- * O(n), where n is the length of the strings.
- * - Additional space is used for the character arrays.
+ * O(1), constant space.
+ * - The frequency array is of fixed size (26) regardless of the input size.
  * <p>
  * ----------------------------------------------------
  * <p>
@@ -64,15 +63,14 @@ import java.util.Arrays;
  * Edge Cases:
  * - Empty strings (should return true).
  * - Strings with the same letters but different cases (case-sensitive comparison).
- * - Strings with special characters or numbers.
  * <p>
  * ----------------------------------------------------
  */
 
-public class ValidAnagramWithSorting {
+public class ValidAnagramWithHashTableOptimal {
 
     /**
-     * Determines if two strings are anagrams using sorting.
+     * Determines if two strings are anagrams using an optimized hash table approach.
      *
      * @param s The first string.
      * @param t The second string.
@@ -84,20 +82,27 @@ public class ValidAnagramWithSorting {
             return false;
         }
 
-        // Convert strings to character arrays
-        char[] sArray = s.toCharArray();
-        char[] tArray = t.toCharArray();
+        // Frequency array for 26 lowercase English letters
+        int[] charFrequency = new int[26];
 
-        // Sort both character arrays
-        Arrays.sort(sArray);
-        Arrays.sort(tArray);
+        // Update the frequency array based on the characters in s and t
+        for (int i = 0; i < s.length(); i++) {
+            charFrequency[s.charAt(i) - 'a']++;
+            charFrequency[t.charAt(i) - 'a']--;
+        }
 
-        // Compare the sorted arrays
-        return Arrays.equals(sArray, tArray);
+        // Check if all frequencies are zero
+        for (int frequency : charFrequency) {
+            if (frequency != 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public static void main(String[] args) {
-        ValidAnagramWithSorting solution = new ValidAnagramWithSorting();
+        ValidAnagramWithHashTableOptimal solution = new ValidAnagramWithHashTableOptimal();
 
         // Test cases
         String s1 = "listen";

@@ -1,12 +1,12 @@
-package arrays.easy;
+package string.easy;
 
-import java.util.HashMap;
+import java.util.Arrays;
 
 /**
  * <p>
  * ----------------------------------------------------
  * <p>
- * 242. Valid Anagram (Using Hash Table)
+ * 242. Valid Anagram (Using Sorting)
  * <p>
  * ----------------------------------------------------
  * <p>
@@ -14,7 +14,7 @@ import java.util.HashMap;
  * <p>
  * ----------------------------------------------------
  * <p>
- * Topics: String, Hash Table
+ * Topics: String, Sorting
  * <p>
  * ----------------------------------------------------
  * <p>
@@ -31,25 +31,24 @@ import java.util.HashMap;
  * ----------------------------------------------------
  * <p>
  * Algorithm:
- * 1. If the lengths of `s` and `t` are not equal, return false.
- * 2. Use two Hash Maps (`countS` and `countT`) to count the frequency of each character in `s` and `t`.
- * 3. Iterate through the characters of both strings and populate the Hash Maps.
- * 4. Compare the two Hash Maps:
+ * 1. If the lengths of the two strings are different, return false (they cannot be anagrams).
+ * 2. Convert both strings into character arrays.
+ * 3. Sort both character arrays.
+ * 4. Compare the two sorted arrays using `Arrays.equals()`.
  *    - If they are equal, return true (the strings are anagrams).
  *    - Otherwise, return false.
  * <p>
  * ----------------------------------------------------
  * <p>
  * Time Complexity:
- * O(n), where n is the length of the strings.
- * - Populating the Hash Maps takes O(n) time.
- * - Comparing the two Hash Maps takes O(n) time.
+ * O(n log n), where n is the length of the strings.
+ * - Sorting the character arrays dominates the complexity.
  * <p>
  * ----------------------------------------------------
  * <p>
  * Space Complexity:
  * O(n), where n is the length of the strings.
- * - The Hash Maps store up to n entries (in the worst case where all characters are unique).
+ * - Additional space is used for the character arrays.
  * <p>
  * ----------------------------------------------------
  * <p>
@@ -70,10 +69,10 @@ import java.util.HashMap;
  * ----------------------------------------------------
  */
 
-public class ValidAnagramWithHashTable {
+public class ValidAnagramWithSorting {
 
     /**
-     * Determines if two strings are anagrams using Hash Tables.
+     * Determines if two strings are anagrams using sorting.
      *
      * @param s The first string.
      * @param t The second string.
@@ -85,25 +84,20 @@ public class ValidAnagramWithHashTable {
             return false;
         }
 
-        // Hash Maps to count character frequencies
-        HashMap<Character, Integer> countS = new HashMap<>();
-        HashMap<Character, Integer> countT = new HashMap<>();
+        // Convert strings to character arrays
+        char[] sArray = s.toCharArray();
+        char[] tArray = t.toCharArray();
 
-        // Populate the Hash Maps
-        for (int i = 0; i < s.length(); i++) {
-            char charS = s.charAt(i);
-            char charT = t.charAt(i);
+        // Sort both character arrays
+        Arrays.sort(sArray);
+        Arrays.sort(tArray);
 
-            countS.put(charS, countS.getOrDefault(charS, 0) + 1);
-            countT.put(charT, countT.getOrDefault(charT, 0) + 1);
-        }
-
-        // Compare the Hash Maps
-        return countS.equals(countT);
+        // Compare the sorted arrays
+        return Arrays.equals(sArray, tArray);
     }
 
     public static void main(String[] args) {
-        ValidAnagramWithHashTable solution = new ValidAnagramWithHashTable();
+        ValidAnagramWithSorting solution = new ValidAnagramWithSorting();
 
         // Test cases
         String s1 = "listen";

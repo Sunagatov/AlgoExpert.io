@@ -1,10 +1,12 @@
-package arrays.easy;
+package string.easy;
+
+import java.util.HashMap;
 
 /**
  * <p>
  * ----------------------------------------------------
  * <p>
- * 242. Valid Anagram (Using Optimized Hash Table)
+ * 242. Valid Anagram (Using Hash Table)
  * <p>
  * ----------------------------------------------------
  * <p>
@@ -12,7 +14,7 @@ package arrays.easy;
  * <p>
  * ----------------------------------------------------
  * <p>
- * Topics: String, Hash Table, Array
+ * Topics: String, Hash Table
  * <p>
  * ----------------------------------------------------
  * <p>
@@ -29,25 +31,25 @@ package arrays.easy;
  * ----------------------------------------------------
  * <p>
  * Algorithm:
- * 1. If the lengths of `s` and `t` are not equal, return false (they cannot be anagrams).
- * 2. Use an integer array of size 26 to store the frequency of each character.
- *    - Increment the count for each character in `s`.
- *    - Decrement the count for each character in `t`.
- * 3. After processing both strings, check if all values in the frequency array are zero.
- *    - If they are, return true (the strings are anagrams).
+ * 1. If the lengths of `s` and `t` are not equal, return false.
+ * 2. Use two Hash Maps (`countS` and `countT`) to count the frequency of each character in `s` and `t`.
+ * 3. Iterate through the characters of both strings and populate the Hash Maps.
+ * 4. Compare the two Hash Maps:
+ *    - If they are equal, return true (the strings are anagrams).
  *    - Otherwise, return false.
  * <p>
  * ----------------------------------------------------
  * <p>
  * Time Complexity:
  * O(n), where n is the length of the strings.
- * - Each character in both strings is processed once.
+ * - Populating the Hash Maps takes O(n) time.
+ * - Comparing the two Hash Maps takes O(n) time.
  * <p>
  * ----------------------------------------------------
  * <p>
  * Space Complexity:
- * O(1), constant space.
- * - The frequency array is of fixed size (26) regardless of the input size.
+ * O(n), where n is the length of the strings.
+ * - The Hash Maps store up to n entries (in the worst case where all characters are unique).
  * <p>
  * ----------------------------------------------------
  * <p>
@@ -63,14 +65,15 @@ package arrays.easy;
  * Edge Cases:
  * - Empty strings (should return true).
  * - Strings with the same letters but different cases (case-sensitive comparison).
+ * - Strings with special characters or numbers.
  * <p>
  * ----------------------------------------------------
  */
 
-public class ValidAnagramWithHashTableOptimal {
+public class ValidAnagramWithHashTable {
 
     /**
-     * Determines if two strings are anagrams using an optimized hash table approach.
+     * Determines if two strings are anagrams using Hash Tables.
      *
      * @param s The first string.
      * @param t The second string.
@@ -82,27 +85,25 @@ public class ValidAnagramWithHashTableOptimal {
             return false;
         }
 
-        // Frequency array for 26 lowercase English letters
-        int[] charFrequency = new int[26];
+        // Hash Maps to count character frequencies
+        HashMap<Character, Integer> countS = new HashMap<>();
+        HashMap<Character, Integer> countT = new HashMap<>();
 
-        // Update the frequency array based on the characters in s and t
+        // Populate the Hash Maps
         for (int i = 0; i < s.length(); i++) {
-            charFrequency[s.charAt(i) - 'a']++;
-            charFrequency[t.charAt(i) - 'a']--;
+            char charS = s.charAt(i);
+            char charT = t.charAt(i);
+
+            countS.put(charS, countS.getOrDefault(charS, 0) + 1);
+            countT.put(charT, countT.getOrDefault(charT, 0) + 1);
         }
 
-        // Check if all frequencies are zero
-        for (int frequency : charFrequency) {
-            if (frequency != 0) {
-                return false;
-            }
-        }
-
-        return true;
+        // Compare the Hash Maps
+        return countS.equals(countT);
     }
 
     public static void main(String[] args) {
-        ValidAnagramWithHashTableOptimal solution = new ValidAnagramWithHashTableOptimal();
+        ValidAnagramWithHashTable solution = new ValidAnagramWithHashTable();
 
         // Test cases
         String s1 = "listen";
