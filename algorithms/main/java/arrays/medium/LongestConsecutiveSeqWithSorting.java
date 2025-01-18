@@ -64,13 +64,19 @@ public class LongestConsecutiveSeqWithSorting {
         int res = 0, curr = nums[0], streak = 0, i = 0;
 
         while (i < nums.length) {
+
+            // It means the current value is different from the previous one,
+            // so reset the streak to 0 and update curr
             if (curr != nums[i]) {
                 curr = nums[i];
                 streak = 0;
             }
+
+            // Skip Duplicates
             while (i < nums.length && nums[i] == curr) {
                 i++;
             }
+
             streak++;
             curr++;
             res = Math.max(res, streak);
