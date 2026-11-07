@@ -1,6 +1,6 @@
-# AlgoExpert.io
+# Algorithms & Data Structures
 
-Welcome to the AlgoExpert.io project! This repository contains implementations of some of the most popular algorithms and data structures, helping you prepare for coding interviews and improve your algorithmic problem-solving skills.
+Java solutions for practising coding interviews, comparing approaches and reviewing algorithm complexity.
 
 <p>
   <a href="https://buymeacoffee.com/lucky_1uck">
@@ -8,73 +8,61 @@ Welcome to the AlgoExpert.io project! This repository contains implementations o
   </a>
 </p>
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Algorithms and Data Structures](#algorithms-and-data-structures)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+## Browse by topic
 
-## Introduction
-The AlgoExpert.io project aims to provide a comprehensive collection of algorithm and data structure implementations. Whether you're preparing for a technical interview or looking to enhance your understanding of computer science concepts, this repository offers valuable resources and examples.
+All implementations live under [algorithms/main/java](algorithms/main/java).
+Topic folders often contain difficulty subfolders and alternative solutions to
+the same problem.
 
-## Features
-- **Comprehensive Implementations**: Includes a wide range of algorithms and data structures.
-- **Well-Documented Code**: Each implementation is thoroughly documented with comments and explanations.
-- **Example Usage**: Provides example usage for each algorithm and data structure.
-- **Easy Navigation**: Organized directory structure for easy navigation and access to specific implementations.
+| Topic | Examples |
+| --- | --- |
+| [Arrays](algorithms/main/java/arrays) | Two Sum, Three Sum, longest consecutive sequence |
+| [Strings](algorithms/main/java/string) | Anagrams, palindromes, common characters |
+| [Two pointers](algorithms/main/java/two_pointers) | Container With Most Water, Sort Colors |
+| [Binary trees](algorithms/main/java/binary_trees) | Invert tree, depth, equality and symmetry |
+| [Linked lists](algorithms/main/java/linked_list) | Reverse list, remove duplicates, remove the nth-last node |
+| [Sorting](algorithms/main/java/sorting) | Bubble, insertion, selection and partition sorting |
+| [Dynamic programming](algorithms/main/java/dynamic_programming) | Fibonacci |
+| [Stacks](algorithms/main/java/stack) | Valid Parentheses |
 
-## Getting Started
-To get started with the project, follow these steps:
+## Start with one solution
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/Sunagatov/AlgoExpert.io.git
-   cd AlgoExpert.io
-### Explore the Code
-Browse through the directories to find the implementations of various algorithms and data structures.
+Read [Two Sum with a one-pass hash map](algorithms/main/java/arrays/easy/TwoSumWithHashMapAsOnePass.java)
+for the problem statement, reasoning, complexity and example cases. Compare it
+with the sorting approach in the same folder.
 
-### Run Examples
-Follow the instructions in each directory to run example usage and test the implementations.
+Use a Java JDK and an IDE, marking `algorithms/main/java` as a source root.
+There is no Maven/Gradle project or shared test runner. You can compile an
+individual solution directly:
 
-## Algorithms and Data Structures
-The repository includes implementations for the following categories:
+```bash
+javac -d out algorithms/main/java/arrays/easy/TwoSumWithHashMapAsOnePass.java
+java -cp out arrays.easy.TwoSumWithHashMapAsOnePass
+```
 
-- **Sorting Algorithms**: Bubble Sort, Quick Sort, Merge Sort, etc.
-- **Searching Algorithms**: Binary Search, Depth-First Search, Breadth-First Search, etc.
-- **Data Structures**: Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Tables, etc.
-- **Dynamic Programming**: Examples of dynamic programming problems and solutions.
+This example prints four sample cases. Entry points differ between
+implementations; use the methods from your own test or driver when a solution
+has no `main` method.
 
 ## Contributing
-Contributions are welcome! If you have an algorithm or data structure that you would like to add, please follow these steps:
 
-1. Fork the repository
-2. Create a new branch
-3. Commit your changes
-4. Push your changes to your branch
-5. Create a pull request
+Keep solutions in the matching topic/difficulty folder. Describe the approach,
+time and space complexity, and useful edge cases. When adding an alternative,
+make its trade-off clear rather than replacing another approach silently.
 
-Please ensure your code is well-documented and includes example usage.
+## License and community
+
+[MIT License](LICENSE). The collection draws on coding-interview exercises and
+online problem resources; source comments link to individual problems where available.
+
+[Discussion on Telegram](https://t.me/zufarexplainedit).
 
 ## ☕ Support the project
 
-If this project helps you learn or inspires your own work, you can support its development.
+If this project helps you learn or build, you can support its development.
 
 <p>
   <a href="https://buymeacoffee.com/lucky_1uck">
     <img src="https://img.shields.io/badge/Support_the_project-FFDD00?style=for-the-badge&amp;logo=buymeacoffee&amp;logoColor=black" alt="Support the project" width="260" height="40">
   </a>
 </p>
-
----
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-- Special thanks to the contributors who have helped improve this project.
-- Inspired by various algorithm and data structure resources available online.
-
-For more information and resources, visit [zufarexplainedit chat on Telegram](https://t.me/zufarexplainedit).
