@@ -2,6 +2,12 @@
 
 Welcome to the AlgoExpert.io project! This repository contains implementations of some of the most popular algorithms and data structures, helping you prepare for coding interviews and improve your algorithmic problem-solving skills.
 
+<p>
+  <a href="https://buymeacoffee.com/lucky_1uck">
+    <img src="https://img.shields.io/badge/Support_the_project-FFDD00?style=for-the-badge&amp;logo=buymeacoffee&amp;logoColor=black" alt="Support the project" width="260" height="40">
+  </a>
+</p>
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
@@ -51,6 +57,18 @@ Contributions are welcome! If you have an algorithm or data structure that you w
 5. Create a pull request
 
 Please ensure your code is well-documented and includes example usage.
+
+## ☕ Support the project
+
+If this project helps you learn or inspires your own work, you can support its development.
+
+<p>
+  <a href="https://buymeacoffee.com/lucky_1uck">
+    <img src="https://img.shields.io/badge/Support_the_project-FFDD00?style=for-the-badge&amp;logo=buymeacoffee&amp;logoColor=black" alt="Support the project" width="260" height="40">
+  </a>
+</p>
+
+---
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
